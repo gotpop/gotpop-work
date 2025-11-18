@@ -1,6 +1,6 @@
 # yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
 
-name: Build and Deploy to EC2
+name: Build and Deploy Work Site to EC2
 
 on:
   push:
@@ -16,12 +16,12 @@ permissions:
 
 jobs:
   build-and-deploy:
-    name: Build Docker Image and Deploy
+    name: Build Docker Image and Deploy Work Site
     runs-on: ubuntu-latest
 
     environment:
-      name: EC2 (production)
-      url: https://gotpop.io
+      name: EC2 Work (production)
+      url: https://work.gotpop.io
 
     steps:
       - name: Checkout code
@@ -33,7 +33,7 @@ jobs:
         with:
           step: start
           token: ${{ secrets.GITHUB_TOKEN }}
-          env: EC2 (production)
+          env: EC2 Work (production)
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
@@ -49,10 +49,10 @@ jobs:
       - name: Build and push Docker image to ECR
         env:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-          ECR_REPOSITORY: ${{ secrets.ECR_REPOSITORY }}
+          ECR_REPOSITORY: gotpop-work
           IMAGE_TAG: ${{ github.sha }}
         run: |
-          echo "Building Docker image..."
+          echo "Building Docker image for work site..."
           docker build \
             --build-arg STORYBLOK_ACCESS_TOKEN=${{ secrets.STORYBLOK_ACCESS_TOKEN }} \
             --build-arg GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} \
@@ -60,48 +60,48 @@ jobs:
             -t $ECR_REGISTRY/$ECR_REPOSITORY:latest \
             .
 
-          echo "Pushing to ECR..."
+          echo "Pushing to work ECR..."
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:latest
 
-          echo "✅ Image pushed successfully!"
+          echo "✅ Work site image pushed successfully!"
           echo "Image: $ECR_REGISTRY/$ECR_REPOSITORY:latest"
 
       - name: Deploy to EC2
         uses: appleboy/ssh-action@v1.0.3
         env:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-          ECR_REPOSITORY: ${{ secrets.ECR_REPOSITORY }}
+          ECR_REPOSITORY: gotpop-work
           AWS_REGION: ${{ secrets.AWS_REGION }}
         with:
-          host: ${{ secrets.EC2_HOST }}
+          host: ${{ secrets.EC2_HOST_WORK }}
           username: ${{ secrets.EC2_USERNAME }}
-          key: ${{ secrets.EC2_SSH_KEY }}
+          key: ${{ secrets.EC2_SSH_KEY_WORK }}
           envs: ECR_REGISTRY,ECR_REPOSITORY,AWS_REGION
           script: |
-            echo "=== Deployment Started ==="
+            echo "=== Work Site Deployment Started ==="
 
             # Login to ECR from EC2
-            echo "Authenticating with ECR..."
+            echo "Authenticating with work ECR..."
             aws ecr get-login-password --region $AWS_REGION | \
               docker login --username AWS --password-stdin $ECR_REGISTRY
 
             # Pull new image
-            echo "Pulling latest image from ECR..."
+            echo "Pulling latest work site image from ECR..."
             docker pull $ECR_REGISTRY/$ECR_REPOSITORY:latest
 
             # Stop and remove old container
-            echo "Stopping old container..."
-            docker stop gotpop-blog || true
-            docker rm gotpop-blog || true
+            echo "Stopping old work container..."
+            docker stop gotpop-work || true
+            docker rm gotpop-work || true
 
             # Run new container
-            echo "Starting new container..."
+            echo "Starting new work container..."
             docker run -d \
               -p 3000:3000 \
-              --name gotpop-blog \
+              --name gotpop-work \
               --restart unless-stopped \
-              --env-file /var/www/gotpop-blog/.env \
+              --env-file /var/www/gotpop-work/.env \
               $ECR_REGISTRY/$ECR_REPOSITORY:latest
 
             # Comprehensive cleanup
@@ -115,12 +115,12 @@ jobs:
             rm -rf /usr/local/share/.cache/yarn/* ~/.cache/yarn/* 2>/dev/null || true
 
             # Show status
-            echo "=== Deployment Complete ==="
+            echo "=== Work Site Deployment Complete ==="
             echo "Container status:"
-            docker ps --filter name=gotpop-blog
+            docker ps --filter name=gotpop-work
             echo ""
             echo "Recent logs:"
-            docker logs gotpop-blog --tail 20
+            docker logs gotpop-work --tail 20
             echo ""
             echo "Disk usage:"
             df -h | grep -E '/$|Filesystem'
@@ -132,6 +132,6 @@ jobs:
           step: finish
           token: ${{ secrets.GITHUB_TOKEN }}
           status: ${{ job.status }}
-          env: EC2 (production)
+          env: EC2 Work (production)
           deployment_id: ${{ steps.deployment.outputs.deployment_id }}
-          env_url: https://gotpop.io
+          env_url: https://work.gotpop.io

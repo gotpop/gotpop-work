@@ -1,27 +1,27 @@
 services:
   # Production version
-  gotpop-blog:
+  gotpop-work:
     build:
       context: ..
       dockerfile: Dockerfile
       args:
         - STORYBLOK_ACCESS_TOKEN=${STORYBLOK_ACCESS_TOKEN}
     ports:
-      - "3000:3000"
+      - "3001:3000"
     environment:
       - NODE_ENV=production
     env_file:
       - ../.env
     restart: unless-stopped
-    container_name: gotpop-blog
+    container_name: gotpop-work
 
   # Development version
-  gotpop-blog-dev:
+  gotpop-work-dev:
     build:
       context: ..
       dockerfile: config/Dockerfile.dev
     ports:
-      - "3000:3000"
+      - "3001:3000"
     environment:
       - NODE_ENV=development
     env_file:
@@ -30,6 +30,6 @@ services:
       - ../src:/app/src
       - ../public:/app/public
     restart: unless-stopped
-    container_name: gotpop-blog-dev
+    container_name: gotpop-work-dev
     profiles:
       - dev
