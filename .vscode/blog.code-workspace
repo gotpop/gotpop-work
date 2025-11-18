@@ -1,0 +1,13 @@
+{
+  "folders": [
+    {
+      "path": ".."
+    },
+    {
+      "path": "../../gotpop-system"
+    }
+  ],
+  "settings": {
+    "sort-imports.on-save": false
+  }
+}

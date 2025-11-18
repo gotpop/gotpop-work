@@ -1,0 +1,53 @@
+{
+  "github.copilot.chat.mcp.servers": {
+    "chrome-devtools": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-chrome-devtools"]
+    }
+  },
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "prettier.semi": false,
+  "prettier.singleQuote": false,
+  "prettier.trailingComma": "es5",
+  "[typescript]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  // Git blame settings - disable inline annotations
+  "git.blame.statusBarEnabled": false,
+  "gitlens.blame.avatars": false,
+  "gitlens.blame.compact": false,
+  "gitlens.blame.dateFormat": null,
+  "gitlens.blame.format": "${author} • ${date}",
+  "gitlens.blame.highlight.enabled": false,
+  "gitlens.blame.ignoreWhitespace": false,
+  "gitlens.blame.separateLines": true,
+  "gitlens.blame.toggleMode": "window",
+  "gitlens.codeLens.enabled": false,
+  "gitlens.currentLine.enabled": false,
+  "gitlens.hovers.enabled": false,
+  "gitlens.statusBar.enabled": false,
+  "gitlens.views.repositories.files.layout": "auto",
+  // The key setting to disable inline blame annotations
+  "gitlens.mode.active": "zen",
+  // Most direct way to disable inline blame
+  "editor.codeLens": false
+}
