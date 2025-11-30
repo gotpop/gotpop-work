@@ -1,88 +1,84 @@
-import "server-only";
+import "server-only"
 
 import {
-	withCardsImageData,
-	withHeaderData,
-	withNavData,
-	withNotFoundPageData,
-	withPageData,
-} from "@gotpop/storyblok";
+  withCardsImageData,
+  withHeaderData,
+  withNavData,
+  withNotFoundPageData,
+  withPageData,
+} from "@gotpop/storyblok"
 import {
-	BaselineStatusBlock,
-	CardImage,
-	CardsImage,
-	FooterDefault,
-	HeaderDefault,
-	HeroDefault,
-	LinkList,
-	LogoDefault,
-	NavDefault,
-	NavItemDefault,
-	PageDefault,
-	PageFilter,
-	PageNotFound,
-	PagePost,
-	PagePostImage,
-	RichTextBlock,
-	RichTextCodeBlock,
-	SnippetBlock,
-} from "@gotpop/system";
-import {
-	apiPlugin,
-	getStoryblokApi,
-	storyblokInit,
-} from "@storyblok/react/rsc";
+  BaselineStatusBlock,
+  CardImage,
+  CardsImage,
+  FooterDefault,
+  HeaderDefault,
+  HeroDefault,
+  LinkList,
+  LogoDefault,
+  NavDefault,
+  NavItemDefault,
+  PageDefault,
+  PageFilter,
+  PageNotFound,
+  PagePost,
+  PagePostImage,
+  RichTextBlock,
+  RichTextCodeBlock,
+  SnippetBlock,
+} from "@gotpop/system"
+import { apiPlugin, getStoryblokApi, storyblokInit } from "@storyblok/react/rsc"
 
-let isInitialized = false;
+let isInitialized = false
 
 /** Ensures Storyblok is initialized with all registered components. */
 export function ensureStoryblokInitialised() {
-	if (isInitialized) {
-		return getStoryblokApi();
-	}
+  if (isInitialized) {
+    return getStoryblokApi()
+  }
 
-	const accessToken = process.env.STORYBLOK_ACCESS_TOKEN;
+  const accessToken = process.env.STORYBLOK_ACCESS_TOKEN
 
-	if (!accessToken) {
-		throw new Error("STORYBLOK_ACCESS_TOKEN environment variable is required");
-	}
+  if (!accessToken) {
+    throw new Error("STORYBLOK_ACCESS_TOKEN environment variable is required")
+  }
 
-	// TODO: Make pages more generic
-	// TODO: Consolidate cards logic
+  // TODO: Make pages more generic
+  // TODO: Consolidate cards logic
 
-	const components = {
-		baseline_status_block: BaselineStatusBlock,
-		card_image: CardImage,
-		cards_with_image: withCardsImageData(CardsImage),
-		footer_default: FooterDefault,
-		header_default: withHeaderData(HeaderDefault),
-		hero_default: HeroDefault,
-		link_list: LinkList,
-		logo_default: LogoDefault,
-		nav_default: withNavData(NavDefault),
-		nav_item_default: NavItemDefault,
-		not_found: withNotFoundPageData(PageNotFound),
-		page_default: withPageData(PageDefault),
-		page_filter: withPageData(PageFilter),
-		page_post_image: withPageData(PagePostImage),
-		page_post: withPageData(PagePost),
-		rich_text_block: RichTextBlock,
-		rich_text_code_block: RichTextCodeBlock,
-		snippet_block: SnippetBlock,
-	};
+  const components = {
+    baseline_status_block: BaselineStatusBlock,
+    card_image: CardImage,
+    cards_with_image: withCardsImageData(CardsImage),
+    footer_default: FooterDefault,
+    header_default: withHeaderData(HeaderDefault),
+    hero_default: HeroDefault,
+    link_list: LinkList,
+    logo_default: LogoDefault,
+    nav_default: withNavData(NavDefault),
+    nav_item_default: NavItemDefault,
+    not_found: withNotFoundPageData(PageNotFound),
+    page_default: withPageData(PageDefault),
+    page_filter: withPageData(PageFilter),
+    page_post_image: withPageData(PagePostImage),
+    page_post: withPageData(PagePost),
+    rich_text_block: RichTextBlock,
+    rich_text_code_block: RichTextCodeBlock,
+    snippet_block: SnippetBlock,
+  }
 
-	storyblokInit({
-		accessToken,
-		use: [apiPlugin],
-		components,
-		apiOptions: {
-			region: "eu",
-		},
-	});
+  storyblokInit({
+    accessToken,
+    use: [apiPlugin],
+    components,
+    apiOptions: {
+      region: "eu",
+    },
+  })
 
-	isInitialized = true;
+  isInitialized = true
 
-	return getStoryblokApi();
+  return getStoryblokApi()
 }
 
-ensureStoryblokInitialised();
+ensureStoryblokInitialised()
