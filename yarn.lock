@@ -213,10 +213,10 @@
   dependencies:
     dotenv "^16.0.0"
 
-"@gotpop/storyblok@^0.1.55":
-  version "0.1.55"
-  resolved "https://npm.pkg.github.com/download/@gotpop/storyblok/0.1.55/5677aa7992fe184ac2478d9ac2325e05a8d8a84b#5677aa7992fe184ac2478d9ac2325e05a8d8a84b"
-  integrity sha512-VG5Pyfvt1Jx5WPhn0ePg+voVTNbjV6d8/ZGgweGMGzKbjEEh1AI7O/7P0xFt11L2Y+RhgV3k4hg4255WVJxWiA==
+"@gotpop/storyblok@^0.1.59":
+  version "0.1.59"
+  resolved "https://npm.pkg.github.com/download/@gotpop/storyblok/0.1.59/4aa45f0887bc353b3709682e3610b75e7c932cb3#4aa45f0887bc353b3709682e3610b75e7c932cb3"
+  integrity sha512-1V72LGGRq98l3dyhrv97k3bY6InemqWbRcWz4dYuwWGsGAIWa5/Cj2neTlQljaIW3hsrBBmbAjSXV6wmZL03Cg==
   dependencies:
     "@storyblok/react" "^5.0.0"
 
@@ -2565,9 +2565,9 @@ storyblok-rich-text-react-renderer@^3.0.1:
   integrity sha512-gd1nvjc95LEMLT4kVVXlN3p1qQUcIb/K4+LYnyAypX3MDP3dr2+DAX64nZb4CNbd8qHd+lM6SLxIxO53hgmK2Q==
 
 storyblok@^4.6.9:
-  version "4.9.0"
-  resolved "https://registry.yarnpkg.com/storyblok/-/storyblok-4.9.0.tgz#477c826856b5d5620cb9c87f1cbfeffdd5dd5b7d"
-  integrity sha512-0IzNDPOepmvXX23aHZFQCC2vrLnOx/oGd5lGxmP7jXPzyXjXydi3HOjeAFasNlJJFhmMSnKZN09Uj1qpRlVO8w==
+  version "4.10.0"
+  resolved "https://registry.yarnpkg.com/storyblok/-/storyblok-4.10.0.tgz#4125c02c04f968ed445a954b80422a884364d1ec"
+  integrity sha512-XDXHVfdTz4UKVqOC0e7Eivk5fD6nXc7t+xZk6ivZTPzUtunUul/F6fAbIwrey+bKLB9q9T+lBL22DMPMmwr49g==
   dependencies:
     "@inquirer/prompts" "^7.5.1"
     "@storyblok/js" "4.4.2"
