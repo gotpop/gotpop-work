@@ -2,7 +2,6 @@ import "server-only"
 
 import {
   withCardsData,
-  withCardsImageData,
   withFormBuilderData,
   withHeaderData,
   withNavData,
@@ -14,8 +13,8 @@ import {
   BaselineStatusBlock,
   Card,
   CardImage,
-  Cards,
-  CardsImage,
+  CardsClientFilter,
+  CardsServer,
   FooterDefault,
   FormBuilder,
   FormInputButtonSubmit,
@@ -55,9 +54,9 @@ export function ensureStoryblokInitialised() {
   const components = {
     baseline_status_block: BaselineStatusBlock,
     card: Card,
-    cards: withCardsData(Cards),
+    cards_server: withCardsData(CardsServer),
+    cards_client_filter: withCardsData(CardsClientFilter),
     card_image: CardImage,
-    cards_with_image: withCardsImageData(CardsImage),
     footer_default: FooterDefault,
     form_builder: withFormBuilderData(FormBuilder, submitFormAction),
     form_input_button_submit: FormInputButtonSubmit,
