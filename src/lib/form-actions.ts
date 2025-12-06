@@ -56,7 +56,13 @@ export async function submitFormAction(formData: FormData): Promise<FormState> {
     body: JSON.stringify(result.data),
   })
 
-  const lambda = new LambdaClient({ region: process.env.AWS_REGION })
+  const lambda = new LambdaClient({
+    region: process.env.AWS_REGION || "eu-west-2",
+    requestHandler: {
+      requestTimeout: 10000,
+    },
+    maxAttempts: 3,
+  })
 
   try {
     const command = new InvokeCommand({
