@@ -663,17 +663,13 @@
   dependencies:
     dotenv "^16.0.0"
 
-"@gotpop/storyblok@^0.1.96":
+"@gotpop/storyblok@file:../system/packages/storyblok":
   version "0.1.96"
-  resolved "https://npm.pkg.github.com/download/@gotpop/storyblok/0.1.96/c798261a60918c0b2b453a5e14aafa0be2ebba1b#c798261a60918c0b2b453a5e14aafa0be2ebba1b"
-  integrity sha512-2vxXcTONJYxf8oDbB7T/Ab9hlZDn8gZnwXoplSl0FuKg8Jp1hvKCySxs7AdPnmGXv+4lGFaauT81DScch/fxiQ==
   dependencies:
-    "@storyblok/react" "^5.0.0"
+    "@storyblok/react" "5.4.20"
 
-"@gotpop/system@^0.1.279":
+"@gotpop/system@file:../system/packages/system":
   version "0.1.279"
-  resolved "https://npm.pkg.github.com/download/@gotpop/system/0.1.279/19df29d0df7a7152fda2d6a0158c29cf0b8926da#19df29d0df7a7152fda2d6a0158c29cf0b8926da"
-  integrity sha512-U1Mv9MbAIoR0rXg9ZY+j5eZ5ATWve+1VsvFmhlKr0a8gz3BZNAMCzjqm8uZvFjA6/Zon7+Il4Loy8DdYi+tn2Q==
   dependencies:
     "@next/font" "^14.2.15"
     motion "^12.23.26"
@@ -1777,7 +1773,7 @@
   dependencies:
     "@storyblok/region-helper" "1.3.1"
 
-"@storyblok/react@5.4.20", "@storyblok/react@^5.0.0":
+"@storyblok/react@5.4.20":
   version "5.4.20"
   resolved "https://registry.yarnpkg.com/@storyblok/react/-/react-5.4.20.tgz#fda0596ee12c4126a47d0170c74072d5cb57d9c0"
   integrity sha512-X49OvDJwVyCxKb+MQk2py0wY/IWy3yF0zaxGZw9aOq2U4kuBxH/34BQiUKtxhhMOBFeNacUm0HvcW6bg6DCmMg==

@@ -2,8 +2,6 @@
   --theme-accent-text: #ffffff;
 }
 
-/* View Transition animations for pagination navigation */
-/* Exit animations (old content leaving) */
 @keyframes slide-to-left {
   from {
     opacity: 1;
@@ -26,7 +24,6 @@
   }
 }
 
-/* Enter animations (new content arriving) */
 @keyframes slide-from-left {
   from {
     opacity: 0;
@@ -50,163 +47,27 @@
 }
 
 html:active-view-transition-type(navigation-forward) {
-  &::view-transition-old(liam) {
+  .hero-page {
+    view-transition-name: hero-page;
+  }
+
+  &::view-transition-old(hero-page) {
     animation-name: slide-to-right;
   }
-  &::view-transition-new(liam) {
+  &::view-transition-new(hero-page) {
     animation-name: slide-from-left;
   }
 }
 
 html:active-view-transition-type(navigation-back) {
-  &::view-transition-old(liam) {
+  .hero-page {
+    view-transition-name: hero-page;
+  }
+
+  &::view-transition-old(hero-page) {
     animation-name: slide-to-left;
   }
-  &::view-transition-new(liam) {
-    animation-name: slide-from-right;
-  }
-}
-
-html:active-view-transition-type(navigation-forward) {
-  &::view-transition-old(post-1) {
-    animation-name: slide-to-right;
-  }
-  &::view-transition-new(post-1) {
-    animation-name: slide-from-left;
-  }
-
-  &::view-transition-old(post-2) {
-    animation-name: slide-to-right;
-  }
-  &::view-transition-new(post-2) {
-    animation-name: slide-from-left;
-  }
-
-  &::view-transition-old(post-3) {
-    animation-name: slide-to-right;
-  }
-  &::view-transition-new(post-3) {
-    animation-name: slide-from-left;
-  }
-
-  &::view-transition-old(post-4) {
-    animation-name: slide-to-right;
-  }
-  &::view-transition-new(post-4) {
-    animation-name: slide-from-left;
-  }
-
-  &::view-transition-old(post-5) {
-    animation-name: slide-to-right;
-  }
-  &::view-transition-new(post-5) {
-    animation-name: slide-from-left;
-  }
-
-  &::view-transition-old(post-6) {
-    animation-name: slide-to-right;
-  }
-  &::view-transition-new(post-6) {
-    animation-name: slide-from-left;
-  }
-
-  &::view-transition-old(post-7) {
-    animation-name: slide-to-right;
-  }
-  &::view-transition-new(post-7) {
-    animation-name: slide-from-left;
-  }
-
-  &::view-transition-old(post-8) {
-    animation-name: slide-to-right;
-  }
-  &::view-transition-new(post-8) {
-    animation-name: slide-from-left;
-  }
-
-  &::view-transition-old(post-9) {
-    animation-name: slide-to-right;
-  }
-  &::view-transition-new(post-9) {
-    animation-name: slide-from-left;
-  }
-
-  &::view-transition-old(post-10) {
-    animation-name: slide-to-right;
-  }
-  &::view-transition-new(post-10) {
-    animation-name: slide-from-left;
-  }
-}
-
-html:active-view-transition-type(navigation-back) {
-  &::view-transition-old(post-1) {
-    animation-name: slide-to-left;
-  }
-  &::view-transition-new(post-1) {
-    animation-name: slide-from-right;
-  }
-
-  &::view-transition-old(post-2) {
-    animation-name: slide-to-left;
-  }
-  &::view-transition-new(post-2) {
-    animation-name: slide-from-right;
-  }
-
-  &::view-transition-old(post-3) {
-    animation-name: slide-to-left;
-  }
-  &::view-transition-new(post-3) {
-    animation-name: slide-from-right;
-  }
-
-  &::view-transition-old(post-4) {
-    animation-name: slide-to-left;
-  }
-  &::view-transition-new(post-4) {
-    animation-name: slide-from-right;
-  }
-
-  &::view-transition-old(post-5) {
-    animation-name: slide-to-left;
-  }
-  &::view-transition-new(post-5) {
-    animation-name: slide-from-right;
-  }
-
-  &::view-transition-old(post-6) {
-    animation-name: slide-to-left;
-  }
-  &::view-transition-new(post-6) {
-    animation-name: slide-from-right;
-  }
-
-  &::view-transition-old(post-7) {
-    animation-name: slide-to-left;
-  }
-  &::view-transition-new(post-7) {
-    animation-name: slide-from-right;
-  }
-
-  &::view-transition-old(post-8) {
-    animation-name: slide-to-left;
-  }
-  &::view-transition-new(post-8) {
-    animation-name: slide-from-right;
-  }
-
-  &::view-transition-old(post-9) {
-    animation-name: slide-to-left;
-  }
-  &::view-transition-new(post-9) {
-    animation-name: slide-from-right;
-  }
-
-  &::view-transition-old(post-10) {
-    animation-name: slide-to-left;
-  }
-  &::view-transition-new(post-10) {
+  &::view-transition-new(hero-page) {
     animation-name: slide-from-right;
   }
 }
