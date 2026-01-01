@@ -1,3 +1,73 @@
 :root {
   --theme-accent-text: #ffffff;
 }
+
+@keyframes slide-to-left {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes slide-to-right {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}
+
+@keyframes slide-from-left {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-from-right {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+html:active-view-transition-type(navigation-forward) {
+  .hero-page {
+    view-transition-name: hero-page;
+  }
+
+  &::view-transition-old(hero-page) {
+    animation-name: slide-to-right;
+  }
+  &::view-transition-new(hero-page) {
+    animation-name: slide-from-left;
+  }
+}
+
+html:active-view-transition-type(navigation-back) {
+  .hero-page {
+    view-transition-name: hero-page;
+  }
+
+  &::view-transition-old(hero-page) {
+    animation-name: slide-to-left;
+  }
+  &::view-transition-new(hero-page) {
+    animation-name: slide-from-right;
+  }
+}
