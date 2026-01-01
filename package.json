@@ -33,8 +33,8 @@
   "dependencies": {
     "@aws-sdk/client-lambda": "^3.940.0",
     "@gotpop/scripts": "^0.1.7",
-    "@gotpop/storyblok": "file:../system/packages/storyblok",
-    "@gotpop/system": "file:../system/packages/system",
+    "@gotpop/storyblok": "^0.1.96",
+    "@gotpop/system": "^0.1.280",
     "@storyblok/react": "5.4.20",
     "next": "^16.1.1",
     "react": "19.2.0",
