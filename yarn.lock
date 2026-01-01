@@ -670,10 +670,10 @@
   dependencies:
     "@storyblok/react" "^5.0.0"
 
-"@gotpop/system@^0.1.277":
-  version "0.1.277"
-  resolved "https://npm.pkg.github.com/download/@gotpop/system/0.1.277/acc422ab050b6cd83becbcbbbf710d152d366b4b#acc422ab050b6cd83becbcbbbf710d152d366b4b"
-  integrity sha512-cTbbkTqS6IvgM9dAkSkwZebqomrbitvK6fLBSI2VFWlsBaeuBjWezFaABI6mICfrnRyFGEueR9O1V0dsPK59bw==
+"@gotpop/system@^0.1.278":
+  version "0.1.278"
+  resolved "https://npm.pkg.github.com/download/@gotpop/system/0.1.278/6c4e3845404e9667c0e83b2a58a591146c4b7848#6c4e3845404e9667c0e83b2a58a591146c4b7848"
+  integrity sha512-6LnpO+pkhhoELnREPDC7Yv75g0avRuvgOt+XUKE0PbmnQQUTdZZ1Zh2uF6Zp3igeXWgIffODF4bUdka3x0hARA==
   dependencies:
     "@next/font" "^14.2.15"
     motion "^12.23.26"
@@ -3545,9 +3545,9 @@ storyblok-rich-text-react-renderer@^3.0.1:
   integrity sha512-gd1nvjc95LEMLT4kVVXlN3p1qQUcIb/K4+LYnyAypX3MDP3dr2+DAX64nZb4CNbd8qHd+lM6SLxIxO53hgmK2Q==
 
 storyblok@^4.6.9:
-  version "4.11.0"
-  resolved "https://registry.yarnpkg.com/storyblok/-/storyblok-4.11.0.tgz#b1750fd2406fbaaecefb4aa73b0f1366d7c66175"
-  integrity sha512-mCMqjc5jdghTtHF/MZaFCGHdTYO7ECbGpZ+5PDxkEeUrHcGngKA7UXCY1hmN08Y0lC5oEU63KqBd8uMglpVgrg==
+  version "4.12.0"
+  resolved "https://registry.yarnpkg.com/storyblok/-/storyblok-4.12.0.tgz#15ec37fcb545bb0bf012a34e48e71f2cb1e67a37"
+  integrity sha512-6xc0MKDDr0vQFH9eQmHlOgAo7R68RWX/+VUuhifjZLwNZpJmjTwwvWev2PA8C6CrVLWlid91c5JNMG2zX/9sTQ==
   dependencies:
     "@inquirer/prompts" "^7.5.1"
     "@storyblok/js" "4.4.3"
