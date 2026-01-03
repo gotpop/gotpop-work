@@ -670,10 +670,10 @@
   dependencies:
     "@storyblok/react" "^5.0.0"
 
-"@gotpop/system@^0.1.283":
-  version "0.1.283"
-  resolved "https://npm.pkg.github.com/download/@gotpop/system/0.1.283/fed2c0d8aafbb7dfc3d7525ded32233da45e0cf5#fed2c0d8aafbb7dfc3d7525ded32233da45e0cf5"
-  integrity sha512-n7k5YhjbxVFzBGa2IGZSDd3mVTIFkqxt5j9Odk5uEhmomQmYEzlhVwaD3aZ88GmpKlAy4AnlRs2OtRG9MUP7eg==
+"@gotpop/system@^0.1.284":
+  version "0.1.284"
+  resolved "https://npm.pkg.github.com/download/@gotpop/system/0.1.284/67ad680192dbebaa1996952452d297a7409f32c9#67ad680192dbebaa1996952452d297a7409f32c9"
+  integrity sha512-0k8QlIfcRXW+j6si89pEMaVTQa2EV5U9WaGmMjETcLeNCNWc/cMT2Es8FjJPEJQuAp3m+rK7plqUGXsrdhCMmw==
   dependencies:
     "@next/font" "^14.2.15"
     lucide-react "^0.469.0"

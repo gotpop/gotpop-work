@@ -34,7 +34,7 @@
     "@aws-sdk/client-lambda": "^3.940.0",
     "@gotpop/scripts": "^0.1.7",
     "@gotpop/storyblok": "^0.1.96",
-    "@gotpop/system": "^0.1.283",
+    "@gotpop/system": "^0.1.284",
     "@storyblok/react": "5.4.20",
     "lucide-react": "^0.469.0",
     "next": "^16.1.1",
